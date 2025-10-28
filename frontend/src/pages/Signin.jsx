@@ -10,7 +10,7 @@ const Signin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { serverUrl } = useContext(userDataContext);
+  const { serverUrl,userData, setUserData } = useContext(userDataContext);
   const [err, setErr] = useState("");
   const [loading,setLoading]=useState(false)
 
@@ -23,10 +23,12 @@ const Signin = () => {
         email, password
       }, { withCredentials: true });
       setLoading(false);
+      setUserData(result.data)
       // TODO: Save user data & navigate
-      // e.g., navigate("/dashboard")
+       navigate("/customize")
     } catch (error) {
       console.log(error);
+      setUserData(null);
       if (error.response && error.response.data?.message) {
         setErr(error.response.data.message);
         setLoading(false);
