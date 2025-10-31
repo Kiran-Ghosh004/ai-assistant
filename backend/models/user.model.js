@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     assistantName:{
         type:String
     },
-    assistantImg:{
+    assistantImage:{
         type:String
     },
     history:[{
