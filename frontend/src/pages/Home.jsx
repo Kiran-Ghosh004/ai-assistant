@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { userDataContext } from '../context/uerContext'
+import { userDataContext } from '../context/userContext'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import aiImg from "../assets/ai.gif"
@@ -196,17 +196,17 @@ useEffect(() => {
 
 
   return (
-    <div className='w-full h-screen bg-linear-to-t from-[black] to-[#02023d] flex justify-center items-center flex-col gap-[15px] overflow-hidden'>
-      <CgMenuRight className='lg:hidden text-white absolute top-5 right-5 w-[25px] h-[25px]' onClick={()=>setHam(true)}/>
-      <div className={`absolute lg:hidden top-0 w-full h-full bg-[#00000053] backdrop-blur-lg p-5 flex flex-col gap-5 items-start ${ham?"translate-x-0":"translate-x-full"} transition-transform`}>
- <RxCross1 className=' text-white absolute top-5 right-5 w-[25px] h-[25px]' onClick={()=>setHam(false)}/>
+    <div className='w-full h-[100vh] bg-gradient-to-t from-[black] to-[#02023d] flex justify-center items-center flex-col gap-[15px] overflow-hidden'>
+      <CgMenuRight className='lg:hidden text-white absolute top-[20px] right-[20px] w-[25px] h-[25px]' onClick={()=>setHam(true)}/>
+      <div className={`absolute lg:hidden top-0 w-full h-full bg-[#00000053] backdrop-blur-lg p-[20px] flex flex-col gap-[20px] items-start ${ham?"translate-x-0":"translate-x-full"} transition-transform`}>
+ <RxCross1 className=' text-white absolute top-[20px] right-[20px] w-[25px] h-[25px]' onClick={()=>setHam(false)}/>
  <button className='min-w-[150px] h-[60px]  text-black font-semibold   bg-white rounded-full cursor-pointer text-[19px] ' onClick={handleLogOut}>Log Out</button>
-      <button className='min-w-[150px] h-[60px]  text-black font-semibold  bg-white  rounded-full cursor-pointer text-[19px] px-5 py-2.5 ' onClick={()=>navigate("/customize")}>Customize your Assistant</button>
+      <button className='min-w-[150px] h-[60px]  text-black font-semibold  bg-white  rounded-full cursor-pointer text-[19px] px-[20px] py-[10px] ' onClick={()=>navigate("/customize")}>Customize your Assistant</button>
 
-<div className='w-full h-0.5 bg-gray-400'></div>
+<div className='w-full h-[2px] bg-gray-400'></div>
 <h1 className='text-white font-semibold text-[19px]'>History</h1>
 
-<div className='w-full h-[400px] gap-5 overflow-y-auto flex flex-col truncate'>
+<div className='w-full h-[400px] gap-[20px] overflow-y-auto flex flex-col truncate'>
   {userData.history?.map((his)=>(
     <div className='text-gray-200 text-[18px] w-full h-[30px]  '>{his}</div>
   ))}
@@ -214,8 +214,8 @@ useEffect(() => {
 </div>
 
       </div>
-      <button className='min-w-[150px] h-[60px] mt-[30px] text-black font-semibold absolute hidden lg:block top-5 right-5 bg-white rounded-full cursor-pointer text-[19px] ' onClick={handleLogOut}>Log Out</button>
-      <button className='min-w-[150px] h-[60px] mt-[30px] text-black font-semibold  bg-white absolute top-[100px] right-5rounded-full cursor-pointer text-[19px] px-5 py-5 hidden lg:block ' onClick={()=>navigate("/customize")}>Customize your Assistant</button>
+      <button className='min-w-[150px] h-[60px] mt-[30px] text-black font-semibold absolute hidden lg:block top-[20px] right-[20px]  bg-white rounded-full cursor-pointer text-[19px] ' onClick={handleLogOut}>Log Out</button>
+      <button className='min-w-[150px] h-[60px] mt-[30px] text-black font-semibold  bg-white absolute top-[100px] right-[20px] rounded-full cursor-pointer text-[19px] px-[20px] py-[10px] hidden lg:block ' onClick={()=>navigate("/customize")}>Customize your Assistant</button>
       <div className='w-[300px] h-[400px] flex justify-center items-center overflow-hidden rounded-4xl shadow-lg'>
 <img src={userData?.assistantImage} alt="" className='h-full object-cover'/>
       </div>

@@ -13,13 +13,13 @@ Your task is to understand the user's natural language input and respond with a 
 {
   "type": "general" | "google-search" | "youtube-search" | "youtube-play" | "get-time" | "get-date" | "get-day" | "get-month"|"calculator-open" | "instagram-open" |"facebook-open" |"weather-show",
   "userInput": "<original user input>" {only remove your name from userinput if exists},
-  "response": "<a short spoken response to read out loud to the user>"
+  "response": "<a  spoken response to read out loud to the user>"
 }
 
 Instructions:
 - "type": determine the intent of the user.
 - "userinput": original sentence the user spoke.
-- "response": A short voice-friendly reply, e.g., "Sure, playing it now", "Here's what I found", "Today is Tuesday", etc.
+- "response": A  voice-friendly reply, e.g., "Sure, playing it now", "Here's what I found", "Today is Tuesday", etc.
 
 Type meanings:
 - "general": if it's a factual or informational question.

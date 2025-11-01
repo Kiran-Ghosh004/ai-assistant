@@ -6,6 +6,7 @@ import authRouter from './routes/auth.routes.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import userRouter from './routes/user.routes.js';
+import geminiResponse from './gemini.js';
 
 
 const app = express();
@@ -20,6 +21,14 @@ const port = process.env.PORT || 8000;
 
 app.use("/api/auth",authRouter)
 app.use("/api/user",userRouter)
+app.get("/", async (req, res) => {
+    const prompt = req.query.prompt;
+    const data = await geminiResponse(prompt);
+    console.log(data);
+    res.json(data);
+});
+
+
 
 
 
